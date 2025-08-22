@@ -1,0 +1,3 @@
+I want to do the UI/UX design for this project because I had fun in UI/UX Design class. 
+I have taken several classes on front-end design at CofC, plus a server side web-programming class, so I would describe my experience as 'full-stack' even though I would consider myself a novice.
+My biggest goal as a conputer scientist is to create systems that are enjoyable for the user. I want to put an end to the ancient, frustrating software often found at companies.
