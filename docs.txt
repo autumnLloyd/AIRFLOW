@@ -1,1 +1,0 @@
-I am the documentation head for this project. I chose this role because I would like to get better at documenting projects (both collaborative and solo). I would not say I'm super adept at either front end, back end, or documentation, but I feel my documentation could use the most work.
