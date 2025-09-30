@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Airflow
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
@@ -57,3 +58,13 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+Group 1
+Autumn Lloyd
+Isaac Haas
+Calvin Golden
+Joshua Smith
+
+
+Live demo
+>>>>>>> d014eb8693c4d11645b194c193dbd1011e29c887
