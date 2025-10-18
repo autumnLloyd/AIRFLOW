@@ -9,7 +9,7 @@ import { AuthService } from '../auth.service';
   selector: 'app-manager-login',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './manager-login.component.html'
+  templateUrl: "./manager-login-component.html"
 })
 
 export class ManagerLoginComponent { 
