@@ -1,0 +1,19 @@
+<!-- TODO Review this and make sure this isn't genAI nonsense - Calzone -->
+<div style="max-width: 400px; margin: 50px auto; text-align: center;">
+  <h2>Manager Login</h2>
+
+  <!-- Simple form for email/password -->
+  <input type="email" [(ngModel)]="email" placeholder="Email" />
+  <br /><br />
+  <input type="password" [(ngModel)]="password" placeholder="Password" />
+  <br /><br />
+  <button (click)="login()">Login</button>
+
+  <!-- Error display -->
+  <p *ngIf="errorMessage" style="color:red;">{{ errorMessage }}</p>
+
+  <!-- Optional navigation link to tenant login -->
+  <p>
+    <a routerLink="/login/tenant">Login as Tenant</a>
+  </p>
+</div>
