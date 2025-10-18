@@ -1,0 +1,17 @@
+<!-- src/app/login/tenant-login.component.html -->
+<div style="max-width: 400px; margin: 50px auto; text-align: center;">
+  <h2>Tenant Login</h2>
+
+  <!-- Tenant passkey form -->
+  <input type="text" [(ngModel)]="passkey" placeholder="Enter Passkey" />
+  <br /><br />
+  <button (click)="login()">Login</button>
+
+  <!-- Error message -->
+  <p *ngIf="errorMessage" style="color:red;">{{ errorMessage }}</p>
+
+  <!-- Optional navigation link back to manager login -->
+  <p>
+    <a routerLink="/login/manager">Login as Manager</a>
+  </p>
+</div>
