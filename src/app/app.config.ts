@@ -15,4 +15,3 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
   ]
 };
-// TODO Incorporate one of these later https://dev.to/this-is-angular/firebase-authentication-with-angular-19-ief 
