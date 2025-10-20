@@ -20,6 +20,7 @@ h1 {font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     font-size: 90px;
     color: #3E78B2;
+    padding-top: 100px;
 }
 
 h2{
@@ -32,10 +33,10 @@ h2{
 button {
     font-family: 'Source Sans 3', sans-serif;
     font-weight: bold;
-    font-size: 50px;
-    padding: 5%;
-    padding-left: 20%;
-    padding-right: 20%;
+    font-size: 30px;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding: 3%;
     background-color: #92DCE5;
     color: #f3fafaff;
 
@@ -45,14 +46,91 @@ button {
 
     align-items: center;
     appearance: none;
-    border-radius: 40%;
+    border-radius: 25px;
     border-style: none;
     box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
     box-sizing: border-box;
 
 }
+
+button:hover{
+    background-color: #bad5d5;
+}
+
 body { margin: 0; 
     font-family: 'Montserrat', sans-serif;
     font-weight: medium;
     font-size: 20px;
+}
+
+/*
+Component specific styling*/
+
+.left-side-buttons{
+    display: grid;
+    justify-content: flex-start;
+}
+.left-side-buttons a{
+    white-space: nowrap;
+    color: #3E78B2;
+    background-color: #bad5d5;
+    border-radius: 25px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    margin-left: 150%;
+    padding-left: 30%;
+    padding-right: 300%;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.left-side-buttons a:hover{
+    background-color: #92DCE5;
+}
+
+.right-side-buttons{
+    display: grid;
+    justify-self: end;
+}
+.right-side-buttons a{
+    color: #3E78B2;
+    text-align: start;
+    background-color: #bad5d5;
+    border-radius: 25px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    padding-left: 300%;
+    padding-right: 30%;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    text-decoration: none;
+    text-transform: capitalize;
+    justify-self: end;
+}
+
+.right-side-buttons a:hover{
+    background-color: #92DCE5;
+}
+
+
+
+.center-text-form input{
+    background-color: #bad5d5;
+    border-radius: 25px;
+    border: none;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    padding-left:15%;
+    padding-right:15%;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.center-text-form input::placeholder{
+    color:#3E78B2;
+    text-align: center;
 }
