@@ -5,7 +5,6 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { routes } from './app.routes';
-
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
@@ -16,4 +15,3 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
   ]
 };
-// TODO Incorporate one of these later https://dev.to/this-is-angular/firebase-authentication-with-angular-19-ief 

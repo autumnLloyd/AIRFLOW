@@ -1,0 +1,10 @@
+<div style="max-width: 400px; margin: 50px auto; text-align: center;">
+<h2>Manager Dashboard</h2>
+<p>Welcome, {{ auth.manager?.email }}</p>
+
+<nav>
+  <a routerLink="/manager/passkeys">Manage Passkeys</a> | 
+  <a routerLink="/manager/workorders">View Work Orders</a>
+  <!-- TODO For Future Inclusion  <a routerLink="/manager/workorders">View Work Orders</a> -->
+</nav>
+</div>
