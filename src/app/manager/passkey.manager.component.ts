@@ -8,7 +8,7 @@ import { PasskeyService } from '../services/passkey.service';
   standalone: true,
   imports: [CommonModule, FormsModule],
   template: `
-    <div style="max-width: 600px; margin: 40px auto;">
+    <div style="max-width: 600px; margin: 40px auto; text-align: center;">
       <h2>Manage Tenant Passkeys</h2>
 
       <form (ngSubmit)="savePasskey()">
