@@ -1,5 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+/*Use H1 for headings..
+H2 for subheadings.. etc
+*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 500;}
+html, body { height: 100%; 
+background-color: #f3fafaff;}
+
+a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #bad5d5;
+}
+
+h1 {font-family: 'Montserrat', sans-serif; 
+    font-weight: lighter;
+    text-transform: uppercase;
+    font-size: 90px;
+    color: #3E78B2;
+}
+
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+button {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    padding: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color: #92DCE5;
+    color: #f3fafaff;
+
+    /*
+    pretty styling
+    */
+
+    align-items: center;
+    appearance: none;
+    border-radius: 40%;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-sizing: border-box;
+
+}
+body { margin: 0; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: medium;
+    font-size: 20px;
+}
