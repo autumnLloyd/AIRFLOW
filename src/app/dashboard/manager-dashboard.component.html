@@ -1,10 +1,12 @@
-<div style="max-width: 400px; margin: 50px auto; text-align: center;">
-<h2>Manager Dashboard</h2>
-<p>Welcome, {{ auth.manager?.email }}</p>
+<h1>Welcome, {{ auth.manager?.email }}</h1>
 
-<nav>
-  <a routerLink="/manager/passkeys">Manage Passkeys</a> | 
-  <a routerLink="/manager/workorders">View Work Orders</a>
+<div class= 'left-side-buttons'>
+  <a routerLink="/manager/passkeys">Manage Properties</a>
+  <br>
+  <a routerLink="/manager/workorders">Manage Work Orders</a>
   <!-- TODO For Future Inclusion  <a routerLink="/manager/workorders">View Work Orders</a> -->
-</nav>
 </div>
+
+
+<button (click)="logout()">Log Out</button>
+

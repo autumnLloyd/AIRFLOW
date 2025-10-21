@@ -13,7 +13,7 @@ export const managerGuard = () => {
     if (auth.manager) return true;
 
     // Get the hell outta here!!
-    router.navigate(['/login/manager']);
+    router.navigate(['/login/launch']);
     return false;
 };
 
@@ -24,6 +24,6 @@ export const tenantGuard = () => {
     // Check with auth to see if we have a tenant session going
     if (auth.tenant) return true;
 
-    router.navigate(['/login/tenant']);
+    router.navigate(['/login/launch']);
     return false;
 }
