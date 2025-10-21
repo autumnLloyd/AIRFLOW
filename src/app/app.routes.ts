@@ -33,5 +33,5 @@ export const routes: Routes = [
     },
 
     // catchall redirect
-    { path: "*", redirectTo: 'login/tenant'}
+    { path: "*", redirectTo: 'login/launch'}
 ];

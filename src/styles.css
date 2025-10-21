@@ -43,6 +43,9 @@ h1 {font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     font-size: 90px;
     color: #3E78B2;
+    position: relative;
+    left: 10%;
+    padding:20;
 }
 
 h2{
@@ -50,6 +53,7 @@ h2{
     font-weight: bolder;
     text-transform: uppercase;
     font-size: 30px;
+    color: #3E78B2;
 }
 
 button {
@@ -85,8 +89,16 @@ body { margin: 0;
     font-size: 20px;
 }
 
+.go-back{
+    display: flex;
+    position: fixed;
+    top:0;
+    left:0;
+    margin:10;
+}
+
 .go-back img{
-    max-width: 75px;
+    max-width: 15%;
     margin: 30px;
 }
 
@@ -154,4 +166,23 @@ Component specific styling*/
 .center-text-form input::placeholder{
     color:#3E78B2;
     text-align: center;
+}
+
+ul {
+    display: table;
+    margin: 30px;
+}
+
+ul li{
+    display: table-row;
+    list-style: none;
+    border: 1px solid #3E78B2;
+    background-color: #bad5d5;
+   
+}
+
+ul li .table-cell{
+    display: table-cell;
+    border: 1px solid #3E78B2;
+     padding: 10px;
 }
