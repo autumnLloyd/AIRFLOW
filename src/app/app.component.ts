@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 import { RouterOutlet, RouterLink } from '@angular/router';
-
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,11 @@ import { RouterOutlet, RouterLink } from '@angular/router';
   templateUrl: "./app.component.html",
 })
 export class AppComponent {
-  title = "Airflow Portal"
+  title = "Airflow Portal";
+
+  constructor(private location: Location) {} 
+
+  goBack(): void {
+    this.location.back(); 
+  }
 }

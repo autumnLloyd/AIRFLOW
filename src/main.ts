@@ -12,7 +12,7 @@ bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes),
     provideAuth(() => getAuth()),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
   ]
 })

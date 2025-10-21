@@ -19,8 +19,14 @@ import { PasskeyService } from '../services/passkey.service';
 
       <ul *ngIf="passkeys.length">
         <li *ngFor="let p of passkeys" style="margin-top:10px;">
-          <strong>{{ p.passkey }}</strong> — {{ p.address }}
-          <button (click)="delete(p.passkey)">Delete</button>
+          <div class = 'table-cell'>
+          <strong>{{ p.passkey }}</strong> </div>
+          <div class = 'table-cell'>
+          {{ p.address }}</div>
+          <div class = 'table-cell'>
+          <button (click)="delete(p.passkey)">
+          Delete</button>
+        </div>
         </li>
       </ul>
     </div>
