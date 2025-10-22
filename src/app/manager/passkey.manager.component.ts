@@ -7,7 +7,7 @@ import { PasskeyService } from '../services/passkey.service';
   selector: 'app-passkey-manager',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  template: `
+  template: ` 
     <div style="max-width: 600px; margin: 40px auto; text-align: center;">
       <h2>Manage Tenant Passkeys</h2>
 
@@ -18,6 +18,14 @@ import { PasskeyService } from '../services/passkey.service';
       </form>
 
       <ul *ngIf="passkeys.length">
+          <li>
+          <div class = 'table-cell'>  
+          Passkey </div>
+          <div class = 'table-cell'>  
+          Address </div>
+          <div class = 'table-cell'>  
+           </div>
+            </li>
         <li *ngFor="let p of passkeys" style="margin-top:10px;">
           <div class = 'table-cell'>
           <strong>{{ p.passkey }}</strong> </div>
