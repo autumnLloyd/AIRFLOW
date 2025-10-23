@@ -24,6 +24,7 @@ body {
 }
 
 html, body { height: 100%; 
+    overflow-x: hidden;
 }
 
 a {
@@ -45,7 +46,7 @@ h1 {font-family: 'Montserrat', sans-serif;
     color: #3E78B2;
     position: relative;
     left: 10%;
-    padding:20;
+    padding: 20px;
 }
 
 h2{
@@ -131,6 +132,20 @@ Component specific styling*/
     align-self: flex-end;
 }
 
+.left-side-buttons button{
+    margin-left: 200%;
+    padding-left: 10%;
+    padding-right: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    background-color: #bad5d5;
+}
+
+.left-side-buttons button:hover{
+    background-color: #92DCE5;
+}
+
 .left-side-buttons a:hover{
     background-color: #92DCE5;
 }
@@ -189,6 +204,5 @@ ul li .table-cell{
 }
 
 .work-order-side-panel{
-    background-color: red;
-    max-width: 300px;
+    justify-content: flex-start;
 }
