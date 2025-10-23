@@ -29,6 +29,7 @@ import { ApplianceService } from '../services/appliance.service';
       <ul *ngIf="appliances.length > 0; else noAppliances">
         <h2 *ngIf="appliances.length > 0">All Appliances:</h2>
         <li>
+          <div class='table-cell'><strong>ApplianceID</strong></div>
           <div class='table-cell'><strong>Address</strong></div>
           <div class='table-cell'><strong>Type</strong></div>
           <div class='table-cell'><strong>Model</strong></div>
@@ -37,6 +38,7 @@ import { ApplianceService } from '../services/appliance.service';
           <div class='table-cell'><strong></strong></div>
         </li>
         <li *ngFor="let appliance of appliances">
+          <div class='table-cell'>{{ appliance.id }}</div>
           <div class='table-cell'>{{ appliance.address }}</div>
           <div class='table-cell'>{{ appliance.type }}</div>
           <div class='table-cell'>{{ appliance.model }}</div>

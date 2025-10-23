@@ -8,9 +8,19 @@ import {
   addDoc,
   deleteDoc,
   doc,
+  getDoc,
   DocumentData,
   CollectionReference,
 } from '@angular/fire/firestore';
+
+export interface Appliance {
+  id: string;
+  address: string;
+  type?: string;
+  model?: string;
+  serial?: string;
+  Manufacture_Year?: number;
+}
 
 @Injectable({ providedIn: 'root' })
 export class ApplianceService {
@@ -40,6 +50,23 @@ export class ApplianceService {
       ...doc.data()
     }));
   }
+
+ async getApplianceById(id: string): Promise<Appliance | undefined> {
+  try {
+    const docRef = doc(this.firestore, 'Appliances', id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      // Spread data first, then overwrite 'id'
+      return { ...(docSnap.data() as Appliance), id: docSnap.id };
+    } else {
+      return undefined;
+    }
+  } catch (error) {
+    console.error('Error fetching appliance by ID:', error);
+    return undefined;
+  }
+}
 
   async getAppliancesByAddress(address: string) {
     console.log('Fetching appliances for address:', address);
