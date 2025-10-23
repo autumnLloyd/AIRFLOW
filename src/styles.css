@@ -152,7 +152,7 @@ Component specific styling*/
     font-weight: bold;
     font-size: 50px;
     margin-left: 150%;
-    padding-left: 30%;
+    padding-left: 15%;
     padding-right: 200%;
     box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
     text-decoration: none;
@@ -267,6 +267,7 @@ ul li .table-cell{
     display: table-cell;
     border: 1px solid #3E78B2;
     padding: 10px;
+    color:#3E78B2;
 }
 
 .work-order-side-panel{
@@ -278,4 +279,14 @@ ul li .table-cell{
 .work-order-side-panel h2{
     text-align: center;
     white-space: no-wrap;
+}
+
+form{
+    background-color: #bad5d5;
+    display: block;
+    margin:50px;
+}
+
+form textarea {
+    color:#3E78B2
 }
