@@ -36,7 +36,7 @@ import { WorkOrderService } from '../services/workorder.service';
 </div>
 
 <div class= 'left-side-buttons'>
-  <a routerLink="/manager/passkeys">Manage Properties</a>
+  <a routerLink="/manager/properties">Manage Properties</a>
   <br>
   <a routerLink="/manager/workorders">Manage Work Orders</a>
   <!-- TODO For Future Inclusion  <a routerLink="/manager/workorders">View Work Orders</a> -->

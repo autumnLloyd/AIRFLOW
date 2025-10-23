@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink} from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
-    selector: 'launch-login',
+    selector: 'app-manager-dashboard',
     standalone: true,
     imports: [CommonModule, RouterLink],
-    templateUrl:"./launch-login-component.html",
+    templateUrl:"./property-dashboard.component.html",
 })
 
 /*
 disregard below.
 */
-export class LaunchLoginComponent {
+export class PropertyDashboardComponent {
     constructor(public auth: AuthService, private router: Router) {}
 
     async logout (){
