@@ -1,14 +1,14 @@
 
-  <h1>Welcome</h1>
-
+  <h1>Welcome, Property Manager</h1>
   <!-- Simple form for email/password -->
    <div class = 'center-text-form'>
   <input type="email" [(ngModel)]="email" placeholder="Email" />
   <br /><br />
   <input type="password" [(ngModel)]="password" placeholder="Password" />
   <br /><br />
+  <button (click)="login()">Submit</button><br>
+  <a href = "">I forgot/don't know login</a>
   </div>
-  <button (click)="login()">Submit</button>
-
   <!-- Error display -->
   <p *ngIf="errorMessage" style="color:red;">{{ errorMessage }}</p>
+  

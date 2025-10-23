@@ -5,8 +5,10 @@
   <!-- Tenant passkey form -->
   <input type="text" [(ngModel)]="passkey" placeholder="Enter Passkey" />
   <br /><br />
+  <button (click)="login()">Submit</button><br>
+  <a href = "">I forgot/don't know id</a>
   </div>
-  <button (click)="login()">Submit</button>
+ 
 
   <!-- Error message -->
   <p *ngIf="errorMessage" style="color:red;">{{ errorMessage }}</p>

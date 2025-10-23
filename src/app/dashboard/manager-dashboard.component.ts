@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef} from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { AuthService } from '../auth.service';
@@ -9,16 +9,11 @@ import { WorkOrderService } from '../services/workorder.service';
     standalone: true,
     imports: [CommonModule, RouterLink],
     template: `
-    <div style="max-width: 600px; margin: 40px auto; text-align: center;">
+    <div>
       <h1>Welcome, {{ auth.manager?.email }}</h1>
-<div class= 'left-side-buttons'>
-  <a routerLink="/manager/passkeys">Manage Properties</a>
-  <br>
-  <a routerLink="/manager/workorders">Manage Work Orders</a>
-  <!-- TODO For Future Inclusion  <a routerLink="/manager/workorders">View Work Orders</a> -->
-
-</div>
+      </div>
       <div class = 'work-order-side-panel'>
+        <h2>Active Work Orders </h2>
         <ul *ngIf="workorders.length">
   <li>
     <div class="table-cell"><strong>Appliance</strong></div>
@@ -39,42 +34,49 @@ import { WorkOrderService } from '../services/workorder.service';
   </li>
 </ul>
 </div>
+
+<div class= 'left-side-buttons'>
+  <a routerLink="/manager/passkeys">Manage Properties</a>
+  <br>
+  <a routerLink="/manager/workorders">Manage Work Orders</a>
+  <!-- TODO For Future Inclusion  <a routerLink="/manager/workorders">View Work Orders</a> -->
 <button (click)="logout()">Logout</button>
+</div>
   `
 })
 
 export class ManagerDashboardComponent implements OnInit {
-  workorders: any[] = [];
+    workorders: any[] = [];
 
-  constructor(
-    public auth: AuthService,
-    private router: Router,
-    private workOrderService: WorkOrderService,
-    private cdr: ChangeDetectorRef
-  ) {}
+    constructor(
+        public auth: AuthService,
+        private router: Router,
+        private workOrderService: WorkOrderService,
+        private cdr: ChangeDetectorRef
+    ) { }
 
-  async ngOnInit() {
-    this.workorders = await this.workOrderService.getActiveWorkOrders();
-    this.cdr.detectChanges();
-  }
-
-  async delete(id: string) {
-    await this.workOrderService.deleteWorkOrder(id);
-    this.workorders = await this.workOrderService.getActiveWorkOrders();
-    this.cdr.detectChanges();
-  }
-
-  async logout() {
-    await this.auth.logout();
-    this.router.navigate(['/login/manager']);
-  }
-
-  getStatusText(status: number): string {
-    switch (status) {
-      case 0: return 'Pending';
-      case 1: return 'In Progress';
-      case 2: return 'Completed';
-      default: return 'Unknown';
+    async ngOnInit() {
+        this.workorders = await this.workOrderService.getActiveWorkOrders();
+        this.cdr.detectChanges();
     }
-  }
+
+    async delete(id: string) {
+        await this.workOrderService.deleteWorkOrder(id);
+        this.workorders = await this.workOrderService.getActiveWorkOrders();
+        this.cdr.detectChanges();
+    }
+
+    async logout() {
+        await this.auth.logout();
+        this.router.navigate(['/login/manager']);
+    }
+
+    getStatusText(status: number): string {
+        switch (status) {
+            case 0: return 'New';
+            case 1: return 'In Progress';
+            case 2: return 'Completed';
+            default: return 'Unknown';
+        }
+    }
 }

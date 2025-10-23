@@ -1,0 +1,17 @@
+<div style="text-align:center; margin-top: 30px;">
+  <h2>Welcome, {{ auth.tenant?.passkey }}</h2>
+  <p>Your address: {{ auth.tenant?.address }}</p>
+
+  <button (click)="logout()">Logout</button>
+
+  <h3 *ngIf="appliances.length > 0">Your Appliances:</h3>
+  <ul *ngIf="appliances.length > 0; else noAppliances">
+    <li *ngFor="let appliance of appliances" style="margin-bottom: 8px;">
+      <strong>{{ appliance.type }}</strong> - {{ appliance.model }} - Serial: {{ appliance.serial }}
+    </li>
+  </ul>
+
+  <ng-template #noAppliances>
+    <p>No appliances found for your address.</p>
+  </ng-template>
+</div>
