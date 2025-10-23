@@ -10,10 +10,10 @@ import { WorkOrderService } from '../services/workorder.service';
     imports: [CommonModule, RouterLink],
     template: `
     <div>
-      <h1>Welcome, {{ auth.manager?.email }}</h1>
+      <h1>Work Orders</h1>
       </div>
       <div class = 'work-order-side-panel'>
-        <h2>Active Work Orders </h2>
+        <h2>All Work Orders </h2>
         <ul *ngIf="workorders.length">
   <li>
     <div class="table-cell"><strong>Appliance</strong></div>
@@ -35,19 +35,10 @@ import { WorkOrderService } from '../services/workorder.service';
 </ul>
 </div>
 
-<div class= 'left-side-buttons'>
-  <a routerLink="/manager/passkeys">Manage Tenant Keys</a>
-  <br>
-  <a routerLink="/manager/workorders">Manage Work Orders</a>
-  <br>
-  <a routerLink="/manager/appliances">Manage Appliances</a>
-  <!-- TODO For Future Inclusion  <a routerLink="/manager/workorders">View Work Orders</a> -->
-<button (click)="logout()">Logout</button>
-</div>
   `
 })
 
-export class ManagerDashboardComponent implements OnInit {
+export class WorkOrderManagerComponent implements OnInit {
     workorders: any[] = [];
 
     constructor(

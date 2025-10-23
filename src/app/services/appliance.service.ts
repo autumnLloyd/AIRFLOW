@@ -5,12 +5,24 @@ import {
   query,
   where,
   getDocs,
-  orderBy
+  addDoc,
 } from '@angular/fire/firestore';
 
 @Injectable({ providedIn: 'root' })
 export class ApplianceService {
   constructor(private firestore: Firestore) {}
+
+  async createAppliance(appliance: any) {
+    try {
+      const colRef = collection(this.firestore, 'Appliances');
+      const docRef = await addDoc(colRef, appliance);
+      console.log('Appliance created with ID:', docRef.id);
+      return docRef.id;
+    } catch (error) {
+      console.error('Error adding appliance:', error);
+      throw error;
+    }
+  }
 
   async getAllAppliances() {
   const snapshot = await getDocs(collection(this.firestore, 'Appliances'));
@@ -36,4 +48,6 @@ export class ApplianceService {
       ...doc.data()
     }));
   }
+
+  
 }

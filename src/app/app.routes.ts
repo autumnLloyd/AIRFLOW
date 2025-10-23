@@ -4,12 +4,11 @@ import { TenantLoginComponent } from './login/tenant-login-component';
 import { FailLoginComponent } from './login/fail-login.component';
 import { LaunchLoginComponent } from './login/launch-login-component';
 import { ManagerDashboardComponent } from './dashboard/manager-dashboard.component';
-import { PropertyDashboardComponent } from './manager/property-dashboard.component';
 import { TenantDashboardComponent } from './dashboard/tenant-dashboard-component';
 import { managerGuard, tenantGuard } from './auth.guard';
 import { PasskeyManagerComponent } from './manager/passkey.manager.component';
-import { RegisterPropertyComponent } from './manager/register-property.component';
-
+import { WorkOrderManagerComponent } from './manager/workorder.manager.component';
+import { ApplianceManagerComponent } from './manager/appliance.manager.component';
 
 // Creates guarded routes between pages; This is the "route" object all the components reference
 export const routes: Routes = [
@@ -28,9 +27,8 @@ export const routes: Routes = [
     children: [
       { path: 'dashboard', component: ManagerDashboardComponent },
       { path: 'passkeys', component: PasskeyManagerComponent },
-      { path: 'properties', component: PropertyDashboardComponent },
-      { path: 'register property', component: RegisterPropertyComponent },
-      // (Future) { path: 'workorders', component: WorkOrderListComponent },
+      { path: 'workorders', component: WorkOrderManagerComponent },
+      { path: 'appliances', component: ApplianceManagerComponent },
     ]
   },
     {
