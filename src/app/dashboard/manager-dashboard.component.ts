@@ -23,14 +23,10 @@ import { WorkOrderService } from '../services/workorder.service';
   </li>
 
   <li *ngFor="let w of workorders" style="margin-top:10px;">
-    <div class="table-cell">{{ w.applianceId }}</div>
+    <div class="table-cell">{{ w.applianceID }}</div>
     <div class="table-cell">{{ w.notes }}</div>
-    <div class="table-cell">
-      {{ getStatusText(w.status) }}
-    </div>
-    <div class="table-cell">
-      <button (click)="delete(w.id)">Delete</button>
-    </div>
+    <div class="table-cell">{{ getStatusText(w.status) }}</div>
+    <div class="table-cell"><button (click)="delete(w.id)">Delete</button></div>
   </li>
 </ul>
 </div>

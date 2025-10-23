@@ -55,7 +55,7 @@ async createWorkOrder(workorder: any) {
 
   /** Delete a work order by its document ID */
   async deleteWorkOrder(id: string): Promise<void> {
-    const docRef = doc(this.firestore, 'workorders', id);
+    const docRef = doc(this.firestore, 'WorkOrders', id);
     await deleteDoc(docRef);
   }
 

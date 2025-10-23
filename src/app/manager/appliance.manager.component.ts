@@ -14,9 +14,9 @@ import { ApplianceService } from '../services/appliance.service';
       <h1>Appliance Manager</h1>
 
       <!-- Add Appliance Form -->
-      <h3>Add New Appliance</h3>
 
       <form (ngSubmit)="addAppliance()">
+        <h2>Add New Appliance</h2>
         <input type="text" placeholder="Address" [(ngModel)]="newAppliance.address" name="address" required />
         <input type="text" placeholder="Type" [(ngModel)]="newAppliance.type" name="type" required />
         <input type="text" placeholder="Model" [(ngModel)]="newAppliance.model" name="model" required />
@@ -25,8 +25,9 @@ import { ApplianceService } from '../services/appliance.service';
         <button type="submit">Add Appliance</button>
       </form>
 
-      <h2 *ngIf="appliances.length > 0">All Appliances:</h2>
+      
       <ul *ngIf="appliances.length > 0; else noAppliances">
+        <h2 *ngIf="appliances.length > 0">All Appliances:</h2>
         <li>
           <div class='table-cell'><strong>Address</strong></div>
           <div class='table-cell'><strong>Type</strong></div>

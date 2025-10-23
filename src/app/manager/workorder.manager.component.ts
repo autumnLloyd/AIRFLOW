@@ -13,12 +13,11 @@ import { FormsModule } from '@angular/forms';
     <div>
       <h1>Work Orders</h1>
 
-<h3>File WorkOrder</h3>
-
       <form (ngSubmit)="addWorkOrder()">
-        <input type="text" placeholder="applianceID" [(ngModel)]="newWorkOrder.applianceID" name="applianceID" required />
+        <h2>File WorkOrder</h2>
+        <input type="text" placeholder="ApplianceID" [(ngModel)]="newWorkOrder.applianceID" name="applianceID" required />
         <input type="text" placeholder="Notes" [(ngModel)]="newWorkOrder.notes" name="model" required />
-        <button type="submit">File Workorder</button>
+        <button type="submit">File WorkOrder</button>
       </form>
 
 
@@ -34,7 +33,7 @@ import { FormsModule } from '@angular/forms';
   </li>
 
   <li *ngFor="let w of workorders" style="margin-top:10px;">
-    <div class="table-cell">{{ w.applianceId }}</div>
+    <div class="table-cell">{{ w.id }}</div>
     <div class="table-cell">{{ w.notes }}</div>
     <div class="table-cell">
       {{ getStatusText(w.status) }}
