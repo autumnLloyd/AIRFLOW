@@ -22,7 +22,7 @@ export class WorkOrderService {
 
   /** Get all active work orders (optionally ordered by creation date) */
   async getActiveWorkOrders(): Promise<any[]> {
-    const q = query(this.workordersRef, orderBy('created', 'desc'));
+    const q = query(this.workordersRef, where('status', '!=', 2), orderBy('created', 'desc')) ;
     const snapshot = await getDocs(q);
     return snapshot.docs.map(doc => ({
       id: doc.id,

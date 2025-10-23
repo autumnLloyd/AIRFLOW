@@ -33,6 +33,7 @@ import { ApplianceService } from '../services/appliance.service';
           <div class='table-cell'><strong>Model</strong></div>
           <div class='table-cell'><strong>Manufacture Year</strong></div>
           <div class='table-cell'><strong>Serial No</strong></div>
+          <div class='table-cell'><strong></strong></div>
         </li>
         <li *ngFor="let appliance of appliances">
           <div class='table-cell'>{{ appliance.address }}</div>
@@ -40,6 +41,7 @@ import { ApplianceService } from '../services/appliance.service';
           <div class='table-cell'>{{ appliance.model }}</div>
           <div class='table-cell'>{{ appliance.Manufacture_Year }}</div>
           <div class='table-cell'>{{ appliance.serial }}</div>
+          <div class='table-cell'><button (click)="delete(appliance.id)">Delete</button></div>
         </li>
       </ul>
 
@@ -94,6 +96,12 @@ export class ApplianceManagerComponent implements OnInit {
     this.appliances = await this.applianceService.getAllAppliances();
     this.cdr.detectChanges();
   }
+
+  async delete(id: string) {
+        await this.applianceService.deleteAppliance(id);
+        this.appliances = await this.applianceService.getAllAppliances();
+        this.cdr.detectChanges();
+    }
 
   async logout() {
     await this.auth.logout();
