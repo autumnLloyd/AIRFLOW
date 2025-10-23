@@ -2,6 +2,12 @@
   <h1>Welcome, {{ auth.tenant?.address }}</h1>
   <h2>Access granted with passkey: {{ auth.tenant?.passkey }}</h2>
 
+  <form (ngSubmit)="addWorkOrder()">
+        <input type="text" placeholder="applianceID" [(ngModel)]="newWorkOrder.applianceID" name="applianceID" required />
+        <input type="text" placeholder="Notes" [(ngModel)]="newWorkOrder.notes" name="model" required />
+        <button type="submit">File Workorder</button>
+      </form>
+
   <div class = 'work-order-side-panel'>
 
   <h2 *ngIf="appliances.length > 0">Your Appliances:</h2>
