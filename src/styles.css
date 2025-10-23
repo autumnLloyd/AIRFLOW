@@ -64,6 +64,7 @@ h2{
     text-transform: uppercase;
     font-size: 30px;
     color: #3E78B2;
+    white-space: nowrap;
 }
 
 button {
@@ -281,12 +282,45 @@ ul li .table-cell{
     white-space: no-wrap;
 }
 
-form{
-    background-color: #bad5d5;
-    display: block;
-    margin:50px;
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* Centers items horizontally */
+    margin: 10px;
+    gap: 10px;             /* Adds consistent spacing between inputs and buttons */
 }
 
-form textarea {
-    color:#3E78B2
+form input {
+    font-family: 'Source Sans 3', sans-serif;
+    color: #3E78B2;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
+    background-color: #bad5d5;
+    width: 40%;
+    padding: 5px;
+    margin: 10px 0;
+    border-radius: 25px;
+    box-sizing: border-box;
+    border: none;
+    box-shadow:  rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+}
+
+form input::placeholder{
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: normal;
+    color: #3E78B2;
+}
+
+form input:focus{
+    border:none;
+    outline: none;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 25px;
+    cursor: pointer;
+
 }

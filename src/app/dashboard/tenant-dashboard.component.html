@@ -5,20 +5,21 @@
   <form (ngSubmit)="addWorkOrder()">
         <input type="text" placeholder="applianceID" [(ngModel)]="newWorkOrder.applianceID" name="applianceID" required />
         <input type="text" placeholder="Notes" [(ngModel)]="newWorkOrder.notes" name="model" required />
-        <button type="submit">File Workorder</button>
+        <button type="submit">File WorkOrder</button>
       </form>
 
-  <div class = 'work-order-side-panel'>
 
   <h2 *ngIf="appliances.length > 0">Your Appliances:</h2>
   <ul *ngIf="appliances.length > 0; else noAppliances">
     <li>
+        <div class = 'table-cell'><strong>Appliance ID</strong></div>
         <div class = 'table-cell'><strong>Type</strong></div>
         <div class = 'table-cell'><strong>Model</strong></div>
         <div class = 'table-cell'><strong>Serial No</strong></div>
     </li>
-    <li *ngFor="let appliance of appliances" ><div class = 'table-cell'>
-      {{ appliance.type }} </div>
+    <li *ngFor="let appliance of appliances" >
+      <div class = 'table-cell'>{{ appliance.id }} </div>
+      <div class = 'table-cell'>{{ appliance.type }} </div>
       <div class = 'table-cell'>{{ appliance.model }} </div>
       <div class = 'table-cell'>{{ appliance.serial }}</div>
     </li>
@@ -28,8 +29,5 @@
   <ng-template #noAppliances>
     <p>No appliances found for your address.</p>
   </ng-template>
-
-  <button (click)="logout()">Logout</button>
-
    </div>
-</div>
+   <button (click)="logout()">Logout</button>

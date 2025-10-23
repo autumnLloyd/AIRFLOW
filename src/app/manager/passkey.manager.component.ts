@@ -8,16 +8,18 @@ import { PasskeyService } from '../services/passkey.service';
   standalone: true,
   imports: [CommonModule, FormsModule],
   template: ` 
-    <div style="max-width: 600px; margin: 40px auto; text-align: center;">
-      <h2>Manage Tenant Passkeys</h2>
+    <div >
+      <h1>Manage Tenant Passkeys</h1>
 
       <form (ngSubmit)="savePasskey()">
+        <h2>Register New Tenant Key</h2>
         <input type="text" placeholder="Passkey" [(ngModel)]="newPasskey" name="passkey" required />
         <input type="text" placeholder="Address" [(ngModel)]="newAddress" name="address" required />
         <button type="submit">Create New</button>
       </form>
 
       <ul *ngIf="passkeys.length">
+        <h2>Existing Tenant Keys</h2>
           <li>
           <div class = 'table-cell'>  
           Passkey </div>
