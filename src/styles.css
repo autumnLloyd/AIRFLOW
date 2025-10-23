@@ -283,6 +283,8 @@ ul li .table-cell{
 
 form{
     background-color: #bad5d5;
+    display: block;
+    margin:50px;
 }
 
 form textarea {

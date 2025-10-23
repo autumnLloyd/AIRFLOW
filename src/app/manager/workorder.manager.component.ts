@@ -3,14 +3,25 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { WorkOrderService } from '../services/workorder.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-manager-dashboard',
     standalone: true,
-    imports: [CommonModule, RouterLink],
+    imports: [CommonModule, RouterLink, FormsModule],
     template: `
     <div>
       <h1>Work Orders</h1>
+
+<h3>File WorkOrder</h3>
+
+      <form (ngSubmit)="addWorkOrder()">
+        <input type="text" placeholder="applianceID" [(ngModel)]="newWorkOrder.applianceID" name="applianceID" required />
+        <input type="text" placeholder="Notes" [(ngModel)]="newWorkOrder.notes" name="model" required />
+        <button type="submit">File Workorder</button>
+      </form>
+
+
       </div>
       <div class = 'work-order-side-panel'>
         <h2>All Work Orders </h2>
@@ -41,6 +52,15 @@ import { WorkOrderService } from '../services/workorder.service';
 export class WorkOrderManagerComponent implements OnInit {
     workorders: any[] = [];
 
+    newWorkOrder = {
+    applianceID: '',
+    created: '',
+    notes: '',
+    status:'',
+    updated:'',
+    
+  };
+
     constructor(
         public auth: AuthService,
         private router: Router,
@@ -49,9 +69,34 @@ export class WorkOrderManagerComponent implements OnInit {
     ) { }
 
     async ngOnInit() {
-        this.workorders = await this.workOrderService.getActiveWorkOrders();
+        this.workorders = await this.workOrderService.getAllWorkOrders();
         this.cdr.detectChanges();
     }
+
+    async addWorkOrder() {
+    try {
+      const id = await this.workOrderService.createWorkOrder(this.newWorkOrder);
+      console.log('Appliance added with ID:', id);
+
+      // Refresh all workorders (manager view)
+      this.workorders = await this.workOrderService.getAllWorkOrders();
+      
+
+      // Clear form after adding
+      this.newWorkOrder = {
+        applianceID: '',
+        created: '',
+        notes: '',
+        status:'',
+        updated:'',
+      };
+
+      this.cdr.detectChanges(); // Trigger UI update
+    } catch (error) {
+      console.error('Failed to add appliance:', error);
+    }
+  }
+
 
     async delete(id: string) {
         await this.workOrderService.deleteWorkOrder(id);

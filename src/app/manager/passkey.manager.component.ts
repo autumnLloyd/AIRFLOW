@@ -14,7 +14,7 @@ import { PasskeyService } from '../services/passkey.service';
       <form (ngSubmit)="savePasskey()">
         <input type="text" placeholder="Passkey" [(ngModel)]="newPasskey" name="passkey" required />
         <input type="text" placeholder="Address" [(ngModel)]="newAddress" name="address" required />
-        <button type="submit">Save / Update</button>
+        <button type="submit">Create New</button>
       </form>
 
       <ul *ngIf="passkeys.length">
