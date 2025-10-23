@@ -13,6 +13,7 @@ import { WorkOrderService } from '../services/workorder.service';
       <h1>Welcome, {{ auth.manager?.email }}</h1>
       </div>
       <div class = 'work-order-side-panel'>
+        <h2>Active Work Orders </h2>
         <ul *ngIf="workorders.length">
   <li>
     <div class="table-cell"><strong>Appliance</strong></div>
