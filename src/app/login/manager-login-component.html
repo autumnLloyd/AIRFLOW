@@ -7,7 +7,7 @@
   <input type="password" [(ngModel)]="password" placeholder="Password" />
   <br /><br />
   <button (click)="login()">Submit</button><br>
-  <a href = "">I forgot/don't know login</a>
+  <a routerLink="/login/fail">I forgot/don't know login</a>
   </div>
   <!-- Error display -->
   <p *ngIf="errorMessage" style="color:red;">{{ errorMessage }}</p>
