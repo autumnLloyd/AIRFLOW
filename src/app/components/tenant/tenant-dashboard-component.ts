@@ -54,7 +54,7 @@ import { FormsModule } from '@angular/forms';
     </ul>
 
     <ng-template #noWorkOrders>
-      <p>No active work orders for your appliances.</p>
+      <h2>No active work orders for your appliances.</h2>
     </ng-template>
 
     <form>

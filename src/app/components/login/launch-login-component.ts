@@ -10,7 +10,7 @@ import { AuthService } from '../../auth.service';
     template:`
     <div class = 'launch'>
 <h1>I am a...</h1>
-  <img src="Logo.png" alt="Logo">
+  <img src="Logo-min.png" alt="Logo">
 
   <div class='launch-side'>
   <div class = 'left-side-buttons'>
